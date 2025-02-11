@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://askmebot.aswinkrishna.com/sitemap.xml
