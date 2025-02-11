@@ -1,6 +1,6 @@
-
+===========================================
   AskMe Bot - AI Chatbot by Aswin 🤖
-
+===========================================
 
 🚀 AskMe Bot is an AI-powered chatbot built using:
    - Next.js (Server Components)
@@ -21,6 +21,20 @@
 🎨 Beautiful UI with TailwindCSS
 📈 Event Tracking & Analytics
 
+--------------------------------------------
+📂 PROJECT STRUCTURE
+--------------------------------------------
+/askme-bot
+│── app/                 # Next.js App Router
+│── components/          # UI Components
+│── public/              # Static assets
+│── styles/              # Global styles
+│── utils/               # Helper functions
+│── providers.js         # PostHog & Global Providers
+│── .env                 # Environment Variables
+│── README.txt           # Project Documentation
+│── package.json         # Dependencies
+│── tsconfig.json        # TypeScript Configuration
 
 --------------------------------------------
 🚀 GETTING STARTED
