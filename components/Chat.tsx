@@ -4,6 +4,7 @@ import { useChat } from "@ai-sdk/react";
 import Image from "next/image"; 
 import userIcon from "../public/user-icon.png"; 
 import aswinImage from "../public/aswin-image.jpg"; 
+import posthog from "posthog-js";
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
@@ -12,6 +13,20 @@ export default function Chat() {
     });
 ;
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
+
+  const trackUserMessage = (message: string) => {
+      posthog.capture("user_message", {
+        message,
+        timestamp: new Date().toISOString(),
+      });
+  };
+
+  const trackBotResponse = (response: string) => {
+    posthog.capture("bot_response", {
+      response,
+      timestamp: new Date().toISOString(),
+    });
+  };
 
 
   useEffect(() => {
@@ -22,8 +37,21 @@ export default function Chat() {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    trackUserMessage(input);
+
     await handleSubmit(); 
   };
+
+  useEffect(() => {
+    if (messages.length > 0) {
+      const latestMessage = messages[messages.length - 1];
+      if (latestMessage.role !== "user") {
+        if (!isLoading) {
+          trackBotResponse(latestMessage.content);
+        }
+      }
+    }
+  },  [messages, isLoading]);
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-950 relative overflow-hidden">
@@ -109,7 +137,7 @@ export default function Chat() {
           )}
           <div ref={messagesEndRef} />
         </div>
-        
+
         {/* Input Box */}
         <form
           onSubmit={handleFormSubmit}
