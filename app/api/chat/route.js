@@ -77,10 +77,13 @@ export async function POST(req) {
     return new Response(readableStream, {
       headers: {
         'Content-Type': 'text/plain; charset=utf-8',
-        'Transfer-Encoding': 'chunked'
+        'Transfer-Encoding': 'chunked',
+        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0'
       }
     });
-
+    
   } catch (error) {
     console.error("Error:", error);
     return new Response("Internal Server Error", { status: 500 });
