@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+===========================================
+  AskMe Bot - AI Chatbot by Aswin 🤖
+===========================================
 
-## Getting Started
+🚀 AskMe Bot is an AI-powered chatbot built using:
+   - Next.js (Server Components)
+   - Google Gemini AI (Natural Language Processing)
+   - Astra DB (Vector Search)
+   - PostHog (Analytics & Tracking)
 
-First, run the development server:
+🔗 Live Demo: https://askmebot.aswinkrishna.com/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+--------------------------------------------
+✨ FEATURES
+--------------------------------------------
+🧠 AI-powered chatbot using Google Gemini AI
+📡 Streaming Responses for real-time conversation
+🏎️ Built with Next.js 13+ (Server Components)
+📊 User Interaction Tracking with PostHog
+🔥 Intelligent Vector Search using Astra DB
+🎨 Beautiful UI with TailwindCSS
+📈 Event Tracking & Analytics
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+--------------------------------------------
+📂 PROJECT STRUCTURE
+--------------------------------------------
+/askme-bot
+│── app/                 # Next.js App Router
+│── components/          # UI Components
+│── public/              # Static assets
+│── styles/              # Global styles
+│── utils/               # Helper functions
+│── providers.js         # PostHog & Global Providers
+│── .env                 # Environment Variables
+│── README.txt           # Project Documentation
+│── package.json         # Dependencies
+│── tsconfig.json        # TypeScript Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+--------------------------------------------
+🚀 GETTING STARTED
+--------------------------------------------
+1️⃣ Clone the Repository:
+   git clone https://github.com/yourgithub/askmebot.git
+   cd askmebot
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2️⃣ Install Dependencies:
+   npm install
 
-## Learn More
+3️⃣ Set Up Environment Variables:
+   Create a `.env.local` file and add:
 
-To learn more about Next.js, take a look at the following resources:
+   NEXT_PUBLIC_POSTHOG_KEY=your-posthog-key
+   NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
+   GEMINI_API_KEY=your-google-gemini-api-key
+   ASTRA_DB_APPLICATION_TOKEN=your-astra-db-token
+   ASTRA_DB_ENDPOINT=your-astra-db-endpoint
+   ASTRA_DB_KEYSPACE=your-db-keyspace
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4️⃣ Run the Development Server:
+   npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   🔗 Open http://localhost:3000 in your browser.
 
-## Deploy on Vercel
+--------------------------------------------
+📊 ANALYTICS WITH POSTHOG
+--------------------------------------------
+- Tracks user messages & AI responses in real-time.
+- Captures session data & user behavior.
+- Enables event tracking & user engagement insights.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+--------------------------------------------
+🚀 DEPLOYING TO VERCEL
+--------------------------------------------
+1. Install Vercel CLI:
+   npm install -g vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Deploy:
+   vercel
+
+--------------------------------------------
+📩 CONTACT
+--------------------------------------------
+✉️ Email: email@aswinkrishna.com
+🌐 Website: https://askmebot.aswinkrishna.com/
+
+🚀 Built with ❤️ by Aswin Krishna

@@ -14,21 +14,6 @@ export default function Chat() {
 ;
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
-  const trackUserMessage = (message: string) => {
-      posthog.capture("user_message", {
-        message,
-        timestamp: new Date().toISOString(),
-      });
-  };
-
-  const trackBotResponse = (response: string) => {
-    posthog.capture("bot_response", {
-      response,
-      timestamp: new Date().toISOString(),
-    });
-  };
-
-
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
@@ -41,6 +26,21 @@ export default function Chat() {
 
     await handleSubmit(); 
   };
+
+  
+  const trackUserMessage = (message: string) => {
+    posthog.capture("user_message", {
+      message,
+      timestamp: new Date().toISOString(),
+    });
+};
+
+const trackBotResponse = (response: string) => {
+  posthog.capture("bot_response", {
+    response,
+    timestamp: new Date().toISOString(),
+  });
+};
 
   useEffect(() => {
     if (messages.length > 0) {
